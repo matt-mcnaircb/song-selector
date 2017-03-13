@@ -1,3 +1,12 @@
 <h1>
   {{title}}
+
+  <div *ngFor="let song of songs">
+    {{ song.title }}
+    <ul>
+      <li *ngFor="let selection of song.selections">
+        {{ selection.date | date: 'longDate' }} - {{ getLanguage(selection.language) }}
+      </li>
+    </ul>
+  </div>
 </h1>
